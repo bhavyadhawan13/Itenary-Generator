@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your Trip</title>
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Plan Your Trip with Us</h1>
+
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" placeholder="Select a destination" readonly>
+        <button id="destButton">Select Destination</button>
+
+        <!-- Popup for destination list -->
+        <div id="popup" class="popup">
+            <ul>
+                <li>Paris, France</li>
+                <li>Tokyo, Japan</li>
+                <li>New York, USA</li>
+                <li>Maldives</li>
+                <li>Rome, Italy</li>
+            </ul>
+            <button id="closePopup">Close</button>
+        </div>
+
+        <label for="daysCount">Duration of Trip:</label>
+        <div id="days">
+            <button id="decreaseDays">-</button>
+            <span id="daysCount">2 days</span>
+            <button id="increaseDays">+</button>
+        </div>
+
+        <h3>Whom are you going with?</h3>
+        <div id="withGroup" class="options-group">
+            <div class="option"><i class="fas fa-users"></i> Family</div>
+            <div class="option"><i class="fas fa-heart"></i> Spouse</div>
+            <div class="option"><i class="fas fa-user-friends"></i> Friends</div>
+            <div class="option"><i class="fas fa-user"></i> Myself</div>
+        </div>
+
+        <h3>Your Budget</h3>
+        <div id="budgetGroup" class="options-group">
+            <div class="option"><i class="fas fa-money-bill-wave"></i> Economy</div>
+            <div class="option"><i class="fas fa-wallet"></i> Normal</div>
+            <div class="option"><i class="fas fa-gem"></i> Luxury</div>
+        </div>
+
+        <h3>Your Interests</h3>
+        <div id="interestGroup" class="options-group">
+            <div class="option"><i class="fas fa-landmark"></i> Historical</div>
+            <div class="option"><i class="fas fa-palette"></i> Art & Culture</div>
+            <div class="option"><i class="fas fa-tree"></i> Nature</div>
+            <div class="option"><i class="fas fa-futbol"></i> Sports</div>
+            <div class="option"><i class="fas fa-film"></i> Entertainment</div>
+            <div class="option"><i class="fas fa-shopping-bag"></i> Shopping</div>
+            <div class="option"><i class="fas fa-mountain"></i> Adventure</div>
+            <div class="option"><i class="fas fa-spa"></i> Relaxation</div>
+        </div>
+
+        <button id="generateButton">Generate Itinerary</button>
+    </div>
+    <!-- Add jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+</body>
+</html>
