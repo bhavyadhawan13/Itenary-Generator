@@ -64,12 +64,15 @@ document.addEventListener('DOMContentLoaded', function () {
         // Validation check to make sure all fields are selected
         if (!selectedDestination || !goingWith || !budget || interests.length === 0) {
             alert("Please fill in all the fields.");
+            highlightEmptyFields(selectedDestination, goingWith, budget, interests);
             return;
         }
 
         // Generate the itinerary based on user selections
         const itinerary = generateItinerary(selectedDestination, daysSelected, goingWith.textContent, budget.textContent, interests);
         generatePDF(itinerary);  // Generate and download PDF
+
+        alert("Your itinerary PDF has been generated!");
     });
 
     // Function to generate itinerary details
@@ -101,5 +104,29 @@ document.addEventListener('DOMContentLoaded', function () {
         const doc = new jsPDF();
         doc.text(itinerary, 10, 10);
         doc.save('Itinerary.pdf');
+    }
+
+    // Function to highlight empty fields
+    function highlightEmptyFields(destination, who, budget, interests) {
+        if (!destination) {
+            destinationInput.style.border = '2px solid red';
+        }
+        if (!who) {
+            document.getElementById('withGroup').style.border = '2px solid red';
+        }
+        if (!budget) {
+            document.getElementById('budgetGroup').style.border = '2px solid red';
+        }
+        if (interests.length === 0) {
+            document.getElementById('interestGroup').style.border = '2px solid red';
+        }
+
+        // Remove border highlight after selection
+        setTimeout(() => {
+            destinationInput.style.border = '';
+            document.getElementById('withGroup').style.border = '';
+            document.getElementById('budgetGroup').style.border = '';
+            document.getElementById('interestGroup').style.border = '';
+        }, 2000);
     }
 });
