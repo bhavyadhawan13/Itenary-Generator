@@ -13,13 +13,14 @@
     <div class="container">
         <h1>Plan Your Trip with Us</h1>
 
+        <!-- Destination Section -->
         <label for="destination">Destination:</label>
-        <input type="text" id="destination" placeholder="Select a destination" readonly>
-        <button id="destButton">Select Destination</button>
+        <input type="text" id="destination" placeholder="Select a destination" readonly aria-label="Selected destination">
+        <button id="destButton" aria-haspopup="true" aria-controls="popup">Select Destination</button>
 
         <!-- Popup for destination list -->
-        <div id="popup" class="popup">
-            <ul>
+        <div id="popup" class="popup" role="dialog" aria-labelledby="Destination Selection">
+            <ul aria-label="Available Destinations">
                 <li>Paris, France</li>
                 <li>Tokyo, Japan</li>
                 <li>New York, USA</li>
@@ -29,43 +30,49 @@
             <button id="closePopup">Close</button>
         </div>
 
+        <!-- Duration Section -->
         <label for="daysCount">Duration of Trip:</label>
         <div id="days">
-            <button id="decreaseDays">-</button>
+            <button id="decreaseDays" aria-label="Decrease trip duration">-</button>
             <span id="daysCount">2 days</span>
-            <button id="increaseDays">+</button>
+            <button id="increaseDays" aria-label="Increase trip duration">+</button>
         </div>
 
+        <!-- Who are you going with Section -->
         <h3>Whom are you going with?</h3>
         <div id="withGroup" class="options-group">
-            <div class="option"><i class="fas fa-users"></i> Family</div>
-            <div class="option"><i class="fas fa-heart"></i> Spouse</div>
-            <div class="option"><i class="fas fa-user-friends"></i> Friends</div>
-            <div class="option"><i class="fas fa-user"></i> Myself</div>
+            <button class="option" aria-label="Traveling with Family"><i class="fas fa-users"></i> Family</button>
+            <button class="option" aria-label="Traveling with Spouse"><i class="fas fa-heart"></i> Spouse</button>
+            <button class="option" aria-label="Traveling with Friends"><i class="fas fa-user-friends"></i> Friends</button>
+            <button class="option" aria-label="Traveling Alone"><i class="fas fa-user"></i> Myself</button>
         </div>
 
+        <!-- Budget Section -->
         <h3>Your Budget</h3>
         <div id="budgetGroup" class="options-group">
-            <div class="option"><i class="fas fa-money-bill-wave"></i> Economy</div>
-            <div class="option"><i class="fas fa-wallet"></i> Normal</div>
-            <div class="option"><i class="fas fa-gem"></i> Luxury</div>
+            <button class="option" aria-label="Economy Budget"><i class="fas fa-money-bill-wave"></i> Economy</button>
+            <button class="option" aria-label="Normal Budget"><i class="fas fa-wallet"></i> Normal</button>
+            <button class="option" aria-label="Luxury Budget"><i class="fas fa-gem"></i> Luxury</button>
         </div>
 
+        <!-- Interests Section -->
         <h3>Your Interests</h3>
         <div id="interestGroup" class="options-group">
-            <div class="option"><i class="fas fa-landmark"></i> Historical</div>
-            <div class="option"><i class="fas fa-palette"></i> Art & Culture</div>
-            <div class="option"><i class="fas fa-tree"></i> Nature</div>
-            <div class="option"><i class="fas fa-futbol"></i> Sports</div>
-            <div class="option"><i class="fas fa-film"></i> Entertainment</div>
-            <div class="option"><i class="fas fa-shopping-bag"></i> Shopping</div>
-            <div class="option"><i class="fas fa-mountain"></i> Adventure</div>
-            <div class="option"><i class="fas fa-spa"></i> Relaxation</div>
+            <button class="option" aria-label="Historical Interests"><i class="fas fa-landmark"></i> Historical</button>
+            <button class="option" aria-label="Art & Culture Interests"><i class="fas fa-palette"></i> Art & Culture</button>
+            <button class="option" aria-label="Nature Interests"><i class="fas fa-tree"></i> Nature</button>
+            <button class="option" aria-label="Sports Interests"><i class="fas fa-futbol"></i> Sports</button>
+            <button class="option" aria-label="Entertainment Interests"><i class="fas fa-film"></i> Entertainment</button>
+            <button class="option" aria-label="Shopping Interests"><i class="fas fa-shopping-bag"></i> Shopping</button>
+            <button class="option" aria-label="Adventure Interests"><i class="fas fa-mountain"></i> Adventure</button>
+            <button class="option" aria-label="Relaxation Interests"><i class="fas fa-spa"></i> Relaxation</button>
         </div>
 
-        <button id="generateButton">Generate Itinerary</button>
+        <!-- Generate Itinerary Button -->
+        <button id="generateButton" aria-label="Generate Itinerary">Generate Itinerary</button>
     </div>
-    <!-- Add jsPDF library -->
+
+    <!-- Add jsPDF library for PDF generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
 </body>
 </html>
