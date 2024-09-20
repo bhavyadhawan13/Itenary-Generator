@@ -8,7 +8,7 @@ body {
 .container {
     max-width: 600px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -16,12 +16,14 @@ body {
 
 h1, h3 {
     text-align: center;
+    color: #283618; /* Dark green */
 }
 
 label {
     display: block;
     margin-top: 20px;
     font-weight: bold;
+    color: #333;
 }
 
 input {
@@ -35,17 +37,30 @@ input {
 
 button {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
+    background-color: #dda15e; /* Light brown */
+    color: #283618; /* Dark green text for better contrast */
+    border: 2px solid #bc6c25; /* Dark brown border */
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10px;
     display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #bc6c25; /* Dark brown */
+    border-color: #606c38; /* Dark green border on hover */
+    color: #fefae0; /* Light cream text on hover */
+}
+
+button i {
+    margin-right: 8px;
+    color: #283618; /* Dark green for icons */
+}
+
+button:hover i {
+    color: #fefae0; /* Light cream icon color on hover */
 }
 
 #days {
@@ -63,19 +78,25 @@ button:hover {
 
 .option {
     padding: 15px;
-    background-color: #eee;
+    background-color: #fefae0; /* Light cream */
+    border: 2px solid #dddddd;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .option:hover {
-    background-color: #ddd;
+    background-color: #bc6c25; /* Dark brown */
+    color: #fefae0; /* Light cream text on hover */
+    border-color: #dda15e; /* Light brown border on hover */
 }
 
 .option.selected {
-    background-color: #007bff;
-    color: white;
+    background-color: #606c38; /* Dark green */
+    color: #fefae0; /* Light cream */
+    border-color: #283618; /* Dark green for selected option */
 }
 
 .popup {
@@ -83,7 +104,7 @@ button:hover {
     position: absolute;
     top: 50px;
     left: 50px;
-    background-color: white;
+    background-color: #ffffff;
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 5px;
@@ -97,4 +118,29 @@ button:hover {
 .popup ul li {
     margin: 10px 0;
     cursor: pointer;
+    color: #283618; /* Dark green */
+}
+
+.popup ul li:hover {
+    color: #bc6c25; /* Dark brown on hover */
+}
+
+#closePopup {
+    background-color: #bc6c25; /* Dark brown */
+    color: #fefae0; /* Light cream text */
+    border: 2px solid #dda15e; /* Light brown border */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#closePopup:hover {
+    background-color: #dda15e; /* Light brown */
+    border-color: #bc6c25; /* Dark brown on hover */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(219, 153, 102, 0.5); /* Light brown focus shadow */
 }
